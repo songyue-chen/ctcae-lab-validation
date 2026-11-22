@@ -1,8 +1,9 @@
 # ctcae-lab-validation
 
-> **Clinical reviewers:** you don't need to run any code. Start with [docs/review-guide.md](docs/review-guide.md):
-> a short list of plain questions on how this dataset reads CTCAE where the wording leaves room. Reply in a GitHub
-> issue. Reviewers who agree to be named are listed under Acknowledgements.
+> **Clinical reviewers:** you don't need to run any code. Start with [docs/review-guide.md](docs/review-guide.md): a
+> short list of plain questions on how this dataset reads CTCAE where the wording leaves room. Reply in a GitHub
+> issue or by message to the person who invited you. Reviewers who agree to be named are listed under
+> Acknowledgements.
 
 A test dataset for CTCAE laboratory grading code, versions 5.0 and 6.0. One dataset, 1,057 laboratory records, each
 with the grade and term a correct implementation must produce under both versions. Run your macro or function on
