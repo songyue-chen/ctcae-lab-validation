@@ -1,0 +1,30 @@
+{
+  "$schema": "https://specs.frictionlessdata.io/schemas/table-schema.json",
+  "name": "analytes",
+  "title": "Analyte master: CDISC test codes, specimens, units and default normal ranges",
+  "description": "One row per laboratory test the dataset grades. Test codes and names are CDISC SDTM controlled terminology (codelists LBTESTCD C65047, LBTEST C67154, SPECTYPE C78734, UNIT C71620) except where CDISC_CT = N.",
+  "fields": [
+    {"name": "LBTESTCD", "type": "string", "constraints": {"required": true, "unique": true, "pattern": "^[A-Z0-9]{1,8}$"}, "description": "Test code used on records.csv and criteria.csv"},
+    {"name": "LBTEST", "type": "string", "constraints": {"required": true}, "description": "CDISC test name (LBTEST submission value)"},
+    {"name": "LBSPEC", "type": "string", "constraints": {"required": true, "enum": ["SERUM", "PLASMA", "BLOOD", "URINE"]}, "description": "Specimen type of the dataset records (CDISC SPECTYPE)"},
+    {"name": "LBSPEC_ALT", "type": "string", "constraints": {"enum": ["SERUM", "PLASMA", "BLOOD", "URINE"]}, "description": "Equivalent specimen graded identically"},
+    {"name": "LBDUR", "type": "string", "constraints": {"enum": ["PT24H"]}, "description": "Collection duration (ISO 8601) when the test is a timed collection"},
+    {"name": "NCI_CODE", "type": "string", "constraints": {"pattern": "^C[0-9]+$"}, "description": "NCI Thesaurus concept code of the LBTESTCD term"},
+    {"name": "CDISC_CT", "type": "string", "constraints": {"required": true, "enum": ["Y", "N"]}, "description": "Y = LBTESTCD is a CDISC submission value; N = sponsor-defined code documented in NOTE"},
+    {"name": "ALIAS_LBTESTCD", "type": "string", "description": "Space-separated CDISC test codes graded with the same criteria"},
+    {"name": "LOINC", "type": "string", "constraints": {"pattern": "^[0-9]+-[0-9]$"}, "description": "Optional LOINC cross-reference (one representative code)"},
+    {"name": "UNIT_SI", "type": "string", "constraints": {"required": true}, "description": "Unit in which VAL_SI, the SI normal range and numeric criteria thresholds are expressed (CDISC UNIT submission value)"},
+    {"name": "UNIT_CONV", "type": "string", "constraints": {"required": true}, "description": "Conventional unit of the VAL_CONV view (CDISC UNIT submission value)"},
+    {"name": "FACTOR_CONV_TO_SI", "type": "number", "constraints": {"required": true, "minimum": 0}, "description": "Multiply a value in UNIT_CONV by this factor to obtain UNIT_SI (equals the units.csv row UNIT_CONV -> UNIT_SI)"},
+    {"name": "DECIMALS_SI", "type": "integer", "constraints": {"required": true, "minimum": 0}, "description": "Reporting precision in UNIT_SI; one reporting step = 10^-DECIMALS_SI"},
+    {"name": "LLN_SI", "type": "number", "description": "Default lower limit of normal (UNIT_SI): ABIM Laboratory Test Reference Ranges, January 2026, converted to SI (MedlinePlus for INR, KDIGO G1 for GFR); 0 when only an upper limit is published; blank when the test has no LLN"},
+    {"name": "ULN_SI", "type": "number", "description": "Default upper limit of normal (UNIT_SI): ABIM Laboratory Test Reference Ranges, January 2026, converted to SI (MedlinePlus for INR); blank when the test has no ULN"},
+    {"name": "DIRECTIONS", "type": "string", "constraints": {"enum": ["H", "L", "HL"]}, "description": "Directions with a CTCAE term in at least one version; blank = no term"},
+    {"name": "TERM_V5_HIGH", "type": "string", "description": "CTCAE v5.0 term for the HIGH direction"},
+    {"name": "TERM_V5_LOW", "type": "string", "description": "CTCAE v5.0 term for the LOW direction"},
+    {"name": "TERM_V6_HIGH", "type": "string", "description": "CTCAE v6.0 term for the HIGH direction"},
+    {"name": "TERM_V6_LOW", "type": "string", "description": "CTCAE v6.0 term for the LOW direction"},
+    {"name": "NOTE", "type": "string", "description": "Mapping and scope notes"}
+  ],
+  "primaryKey": "LBTESTCD"
+}

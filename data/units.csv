@@ -1,0 +1,84 @@
+LBTESTCD,FROM_UNIT,TO_UNIT,FACTOR,BASIS,NOTE
+ALB,g/dL,g/L,10,1 g/dL = 10 g/L,
+ALB,mg/dL,g/L,0.01,1 mg/dL = 0.01 g/L,
+BICARB,mEq/L,mmol/L,1,monovalent ion: 1 mEq = 1 mmol,
+BILI,mg/dL,umol/L,17.1,molar mass 584.7 g/mol; 1 mg/dL = 17.1 umol/L,CTCAE quotes ULN multiples only
+CACR,mg/dL,mmol/L,0.2495,molar mass 40.08 g/mol; 1 mg/dL = 0.2495 mmol/L,CTCAE pairs 11.5 mg/dL with 2.9 mmol/L
+CACR,mEq/L,mmol/L,0.5,divalent ion: 1 mEq = 0.5 mmol,
+CAION,mg/dL,mmol/L,0.2495,molar mass 40.08 g/mol; 1 mg/dL = 0.2495 mmol/L,CTCAE pairs 11.5 mg/dL with 2.9 mmol/L
+CAION,mEq/L,mmol/L,0.5,divalent ion: 1 mEq = 0.5 mmol,
+CHOL,mg/dL,mmol/L,0.02586,molar mass 386.65 g/mol; 1 mg/dL = 0.02586 mmol/L,CTCAE pairs 300 mg/dL with 7.75 mmol/L
+HDL,mg/dL,mmol/L,0.02586,molar mass 386.65 g/mol; 1 mg/dL = 0.02586 mmol/L,CTCAE pairs 300 mg/dL with 7.75 mmol/L
+LDL,mg/dL,mmol/L,0.02586,molar mass 386.65 g/mol; 1 mg/dL = 0.02586 mmol/L,CTCAE pairs 300 mg/dL with 7.75 mmol/L
+CREAT,mg/dL,umol/L,88.4,molar mass 113.12 g/mol; 1 mg/dL = 88.4 umol/L,CTCAE quotes ULN and baseline multiples only
+CREATCLR,mL/s,mL/min,60,1 mL/s = 60 mL/min,
+GFR,mL/s/1.73 m2,mL/min/1.73 m2,60,1 mL/s = 60 mL/min,
+GFRBSCRT,mL/s/1.73 m2,mL/min/1.73 m2,60,1 mL/s = 60 mL/min,
+FIBRINO,mg/dL,g/L,0.01,1 mg/dL = 0.01 g/L,CTCAE absolute clause <50 mg/dL = <0.5 g/L
+FIBRINO,umol/L,g/L,0.34,molar mass 340 kDa; 1 umol/L = 0.34 g/L,
+GLUC,mg/dL,mmol/L,0.0555,molar mass 180.16 g/mol; 1 mg/dL = 0.0555 mmol/L,CTCAE pairs 160 mg/dL with 8.9 mmol/L
+HAPTOG,mg/dL,g/L,0.01,1 mg/dL = 0.01 g/L,
+HGB,g/dL,g/L,10,1 g/dL = 10 g/L,CTCAE pairs 10.0 g/dL with 100 g/L
+HGB,mmol/L,g/L,16.114,iron-based (monomer) 1 mmol/L = 1.6114 g/dL,CTCAE pairs 6.2 mmol/L with 100 g/L
+K,mEq/L,mmol/L,1,monovalent ion: 1 mEq = 1 mmol,
+MG,mg/dL,mmol/L,0.4114,molar mass 24.305 g/mol; 1 mg/dL = 0.4114 mmol/L,CTCAE pairs 3.0 mg/dL with 1.23 mmol/L
+MG,mEq/L,mmol/L,0.5,divalent ion: 1 mEq = 0.5 mmol,
+PHOS,mg/dL,mmol/L,0.3229,phosphorus molar mass 30.97 g/mol; 1 mg/dL = 0.3229 mmol/L,CTCAE phosphate grades are not numeric
+PROTEXR,g/day,mg/day,1000,1 g = 1000 mg,CTCAE quotes g/24 hrs; g/24h is the CDISC synonym of g/day
+SODIUM,mEq/L,mmol/L,1,monovalent ion: 1 mEq = 1 mmol,
+TRIG,mg/dL,mmol/L,0.01129,molar mass 885.4 g/mol (triolein); 1 mg/dL = 0.01129 mmol/L,CTCAE pairs 150 mg/dL with 1.71 mmol/L
+TROPONI,ug/L,ng/L,1000,1 ug/L = 1 ng/mL = 1000 ng/L,CTCAE quotes ULN only
+TROPONT,ug/L,ng/L,1000,1 ug/L = 1 ng/mL = 1000 ng/L,CTCAE quotes ULN only
+URATE,mg/dL,umol/L,59.48,molar mass 168.11 g/mol; 1 mg/dL = 59.48 umol/L,CTCAE quotes ULN only
+UREA,mg/dL,mmol/L,0.1665,molar mass 60.06 g/mol; 1 mg/dL urea = 0.1665 mmol/L,not for urea nitrogen (BUN): 1 mg/dL BUN = 0.357 mmol/L urea
+VTD2D3IT,ug/L,nmol/L,2.496,molar mass 400.6 g/mol; 1 ng/mL = 2.496 nmol/L,
+ALT,ukat/L,U/L,60,1 ukat/L = 60 U/L,CTCAE quotes ULN multiples only; the unit cancels
+AST,ukat/L,U/L,60,1 ukat/L = 60 U/L,CTCAE quotes ULN multiples only; the unit cancels
+ALP,ukat/L,U/L,60,1 ukat/L = 60 U/L,CTCAE quotes ULN multiples only; the unit cancels
+GGT,ukat/L,U/L,60,1 ukat/L = 60 U/L,CTCAE quotes ULN multiples only; the unit cancels
+LDH,ukat/L,U/L,60,1 ukat/L = 60 U/L,CTCAE quotes ULN multiples only; the unit cancels
+CK,ukat/L,U/L,60,1 ukat/L = 60 U/L,CTCAE quotes ULN multiples only; the unit cancels
+AMYLASE,ukat/L,U/L,60,1 ukat/L = 60 U/L,CTCAE quotes ULN multiples only; the unit cancels
+LIPASET,ukat/L,U/L,60,1 ukat/L = 60 U/L,CTCAE quotes ULN multiples only; the unit cancels
+WBC,10^6/L,10^9/L,0.001,1 x 10^6/L = 0.001 x 10^9/L,CDISC 10^6/L = /uL = /mm3
+WBC,/uL,10^9/L,0.001,1 /uL = 1 x 10^6/L = 0.001 x 10^9/L,CTCAE quotes /mm3
+WBC,/mm3,10^9/L,0.001,1 /mm3 = 1 /uL,
+WBC,10^3/uL,10^9/L,1,1 x 10^3/uL = 1 x 10^9/L,"CDISC synonym of 10^9/L (K/uL, 10^3/mm3)"
+WBC,10^3/mm3,10^9/L,1,1 x 10^3/mm3 = 1 x 10^9/L,
+WBC,K/uL,10^9/L,1,1 K/uL = 1 x 10^9/L,
+WBC,G/L,10^9/L,1,giga per litre = 10^9/L,"test-specific: G/L means grams per litre for ALB, HGB, FIBRINO and HAPTOG"
+NEUT,10^6/L,10^9/L,0.001,1 x 10^6/L = 0.001 x 10^9/L,CDISC 10^6/L = /uL = /mm3
+NEUT,/uL,10^9/L,0.001,1 /uL = 1 x 10^6/L = 0.001 x 10^9/L,CTCAE quotes /mm3
+NEUT,/mm3,10^9/L,0.001,1 /mm3 = 1 /uL,
+NEUT,10^3/uL,10^9/L,1,1 x 10^3/uL = 1 x 10^9/L,"CDISC synonym of 10^9/L (K/uL, 10^3/mm3)"
+NEUT,10^3/mm3,10^9/L,1,1 x 10^3/mm3 = 1 x 10^9/L,
+NEUT,K/uL,10^9/L,1,1 K/uL = 1 x 10^9/L,
+NEUT,G/L,10^9/L,1,giga per litre = 10^9/L,"test-specific: G/L means grams per litre for ALB, HGB, FIBRINO and HAPTOG"
+LYM,10^6/L,10^9/L,0.001,1 x 10^6/L = 0.001 x 10^9/L,CDISC 10^6/L = /uL = /mm3
+LYM,/uL,10^9/L,0.001,1 /uL = 1 x 10^6/L = 0.001 x 10^9/L,CTCAE quotes /mm3
+LYM,/mm3,10^9/L,0.001,1 /mm3 = 1 /uL,
+LYM,10^3/uL,10^9/L,1,1 x 10^3/uL = 1 x 10^9/L,"CDISC synonym of 10^9/L (K/uL, 10^3/mm3)"
+LYM,10^3/mm3,10^9/L,1,1 x 10^3/mm3 = 1 x 10^9/L,
+LYM,K/uL,10^9/L,1,1 K/uL = 1 x 10^9/L,
+LYM,G/L,10^9/L,1,giga per litre = 10^9/L,"test-specific: G/L means grams per litre for ALB, HGB, FIBRINO and HAPTOG"
+EOS,10^6/L,10^9/L,0.001,1 x 10^6/L = 0.001 x 10^9/L,CDISC 10^6/L = /uL = /mm3
+EOS,/uL,10^9/L,0.001,1 /uL = 1 x 10^6/L = 0.001 x 10^9/L,CTCAE quotes /mm3
+EOS,/mm3,10^9/L,0.001,1 /mm3 = 1 /uL,
+EOS,10^3/uL,10^9/L,1,1 x 10^3/uL = 1 x 10^9/L,"CDISC synonym of 10^9/L (K/uL, 10^3/mm3)"
+EOS,10^3/mm3,10^9/L,1,1 x 10^3/mm3 = 1 x 10^9/L,
+EOS,K/uL,10^9/L,1,1 K/uL = 1 x 10^9/L,
+EOS,G/L,10^9/L,1,giga per litre = 10^9/L,"test-specific: G/L means grams per litre for ALB, HGB, FIBRINO and HAPTOG"
+PLAT,10^6/L,10^9/L,0.001,1 x 10^6/L = 0.001 x 10^9/L,CDISC 10^6/L = /uL = /mm3
+PLAT,/uL,10^9/L,0.001,1 /uL = 1 x 10^6/L = 0.001 x 10^9/L,CTCAE quotes /mm3
+PLAT,/mm3,10^9/L,0.001,1 /mm3 = 1 /uL,
+PLAT,10^3/uL,10^9/L,1,1 x 10^3/uL = 1 x 10^9/L,"CDISC synonym of 10^9/L (K/uL, 10^3/mm3)"
+PLAT,10^3/mm3,10^9/L,1,1 x 10^3/mm3 = 1 x 10^9/L,
+PLAT,K/uL,10^9/L,1,1 K/uL = 1 x 10^9/L,
+PLAT,G/L,10^9/L,1,giga per litre = 10^9/L,"test-specific: G/L means grams per litre for ALB, HGB, FIBRINO and HAPTOG"
+CD4,10^6/L,10^9/L,0.001,1 x 10^6/L = 0.001 x 10^9/L,CDISC 10^6/L = /uL = /mm3
+CD4,/uL,10^9/L,0.001,1 /uL = 1 x 10^6/L = 0.001 x 10^9/L,CTCAE quotes /mm3
+CD4,/mm3,10^9/L,0.001,1 /mm3 = 1 /uL,
+CD4,10^3/uL,10^9/L,1,1 x 10^3/uL = 1 x 10^9/L,"CDISC synonym of 10^9/L (K/uL, 10^3/mm3)"
+CD4,10^3/mm3,10^9/L,1,1 x 10^3/mm3 = 1 x 10^9/L,
+CD4,K/uL,10^9/L,1,1 K/uL = 1 x 10^9/L,
+CD4,G/L,10^9/L,1,giga per litre = 10^9/L,"test-specific: G/L means grams per litre for ALB, HGB, FIBRINO and HAPTOG"

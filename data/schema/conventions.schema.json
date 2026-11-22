@@ -1,0 +1,20 @@
+{
+  "$schema": "https://specs.frictionlessdata.io/schemas/table-schema.json",
+  "name": "conventions",
+  "title": "Interpretation conventions behind the expected values",
+  "description": "Every choice the expected values depend on that CTCAE wording does not settle, with the default reading and, where one is published, the alternative profile that holds the other reading. Profiles: DEFAULT, BESTCASE_ENZYMES, HYPERGLY_NUMERIC_V5, PRESENT_NOT_LAB, UNGRADABLE_ZERO, BASELINE_STRICT.",
+  "fields": [
+    {"name": "CONVENTION", "type": "string", "constraints": {"required": true, "unique": true, "pattern": "^[A-Z0-9_]+$"}, "description": "Code referenced by criteria.csv CONVENTION and records.csv CONVENTIONS"},
+    {"name": "SCOPE", "type": "string", "constraints": {"required": true, "enum": ["GRADING", "DATA"]}, "description": "GRADING = how a CTCAE criterion is read; DATA = how record states are handled (baseline, missing data, units, specimen)"},
+    {"name": "TITLE", "type": "string", "constraints": {"required": true}, "description": "Short title"},
+    {"name": "CTCAE_WORDING", "type": "string", "description": "Quoted CTCAE text that leaves the choice open (blank for DATA conventions)"},
+    {"name": "DEFAULT_CHOICE", "type": "string", "constraints": {"required": true}, "description": "Reading used by the DEFAULT profile"},
+    {"name": "ALTERNATIVE_CHOICE", "type": "string", "description": "Other defensible reading"},
+    {"name": "ALTERNATIVE_PROFILE", "type": "string", "constraints": {"enum": ["BESTCASE_ENZYMES", "HYPERGLY_NUMERIC_V5", "PRESENT_NOT_LAB", "UNGRADABLE_ZERO", "BASELINE_STRICT"]}, "description": "Profile in expectations.csv that publishes the alternative, when one exists"},
+    {"name": "VERSIONS", "type": "string", "constraints": {"required": true, "enum": ["5", "6", "5 6"]}, "description": "CTCAE versions concerned"},
+    {"name": "LBTESTCD", "type": "string", "constraints": {"required": true}, "description": "Space-separated test codes concerned, or ALL"},
+    {"name": "CONVENTION_DEP", "type": "string", "constraints": {"required": true, "enum": ["Y", "N"]}, "description": "Y = a record whose expectation depends on this convention is flagged CONVENTION_DEP = Y in records.csv"},
+    {"name": "NOTE", "type": "string", "description": "Further notes"}
+  ],
+  "primaryKey": "CONVENTION"
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://specs.frictionlessdata.io/schemas/table-schema.json",
+  "name": "units",
+  "title": "Unit conversions into the analyte SI unit",
+  "description": "value in FROM_UNIT x FACTOR = value in TO_UNIT. TO_UNIT is always the analyte's UNIT_SI; the reverse conversion is 1 / FACTOR. Factors are test-specific (the same unit string converts differently for different analytes, and G/L means giga per litre for counts but grams per litre for proteins). Unit spellings are matched after normalisation by the loaders.",
+  "fields": [
+    {"name": "LBTESTCD", "type": "string", "constraints": {"required": true}, "description": "Test code (analytes.csv)"},
+    {"name": "FROM_UNIT", "type": "string", "constraints": {"required": true}, "description": "Unit as it may arrive on a record"},
+    {"name": "TO_UNIT", "type": "string", "constraints": {"required": true}, "description": "Analyte UNIT_SI"},
+    {"name": "FACTOR", "type": "number", "constraints": {"required": true, "minimum": 0}, "description": "Multiplier FROM_UNIT -> TO_UNIT"},
+    {"name": "BASIS", "type": "string", "constraints": {"required": true}, "description": "Physical basis of the factor (molar mass, valence, prefix)"},
+    {"name": "NOTE", "type": "string", "description": "Where CTCAE prints the pair of values this factor reproduces"}
+  ],
+  "primaryKey": ["LBTESTCD", "FROM_UNIT"],
+  "foreignKeys": [
+    {"fields": "LBTESTCD", "reference": {"resource": "analytes", "fields": "LBTESTCD"}}
+  ]
+}

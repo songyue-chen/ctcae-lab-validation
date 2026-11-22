@@ -1,0 +1,4 @@
+.DS_Store
+__pycache__/
+# local working notes, not part of the package
+AGENTS.md

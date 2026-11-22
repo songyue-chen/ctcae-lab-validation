@@ -1,0 +1,37 @@
+{
+  "$schema": "https://specs.frictionlessdata.io/schemas/table-schema.json",
+  "name": "criteria",
+  "title": "CTCAE laboratory grading criteria (machine-readable transcription)",
+  "description": "One row per CTCAE version x test x direction x baseline arm x grade x clause. Every row quotes the grade cell verbatim (WORDING) and the fragment it transcribes (CLAUSE). Rows with LAB_DERIVABLE = N document grade cells or clauses that cannot be derived from laboratory data and are never used to grade. A grade is reached when any of its lab-derivable clauses holds under the active profile; clauses with a QUALIFIER are switched on or off by the conventions and profile (see conventions.csv).",
+  "fields": [
+    {"name": "RULE_ID", "type": "string", "constraints": {"required": true, "pattern": "^V[56]\\.[A-Z0-9]+\\.[HL]\\.(ANY|NRM|ABN|BLL)\\.G[1-5]$"}, "description": "Identifier referenced by records.csv RULE_IDS: V<version>.<LBTESTCD>.<H|L>.<ANY|NRM|ABN|BLL>.G<grade>; several clauses of one grade share the RULE_ID and differ in CLAUSE_SEQ"},
+    {"name": "CLAUSE_SEQ", "type": "integer", "constraints": {"required": true, "minimum": 1}, "description": "Sequence of the clause within the RULE_ID"},
+    {"name": "VERSION", "type": "integer", "constraints": {"required": true, "enum": [5, 6]}, "description": "CTCAE major version"},
+    {"name": "LBTESTCD", "type": "string", "constraints": {"required": true}, "description": "CDISC laboratory test code (analytes.csv)"},
+    {"name": "LBSPEC", "type": "string", "constraints": {"required": true, "enum": ["SERUM", "PLASMA", "BLOOD", "URINE"]}, "description": "Specimen type of the graded test (CDISC SPECTYPE submission value)"},
+    {"name": "CTCAE_TERM", "type": "string", "constraints": {"required": true}, "description": "Official CTCAE term of this version, as printed"},
+    {"name": "SOC", "type": "string", "constraints": {"required": true}, "description": "MedDRA System Organ Class under which CTCAE lists the term"},
+    {"name": "DIRECTION", "type": "string", "constraints": {"required": true, "enum": ["HIGH", "LOW"]}, "description": "Direction of the abnormality graded"},
+    {"name": "BASELINE_ARM", "type": "string", "constraints": {"required": true, "enum": ["ANY", "NORMAL", "ABNORMAL", "BELOW_LLN"]}, "description": "Baseline condition under which the clause applies: ANY = unconditional; NORMAL = baseline not abnormal in the graded direction; ABNORMAL = baseline >ULN (HIGH) or <LLN (LOW); BELOW_LLN = baseline below LLN (v6 creatinine)"},
+    {"name": "GRADE", "type": "integer", "constraints": {"required": true, "minimum": 1, "maximum": 5}, "description": "CTCAE grade of the cell"},
+    {"name": "LAB_DERIVABLE", "type": "string", "constraints": {"required": true, "enum": ["Y", "N"]}, "description": "Y = the clause can be evaluated from a laboratory value, its normal range and baseline; N = documentation only"},
+    {"name": "WORDING", "type": "string", "constraints": {"required": true}, "description": "Verbatim text of the grade cell (whitespace normalised)"},
+    {"name": "CLAUSE", "type": "string", "constraints": {"required": true}, "description": "Verbatim fragment of WORDING that this row transcribes; several non-contiguous fragments are joined with '; '"},
+    {"name": "COMPARATOR", "type": "string", "constraints": {"enum": [">", ">=", "<", "<="]}, "description": "Comparison of OPERAND against THRESHOLD (blank for LAB_DERIVABLE = N)"},
+    {"name": "OPERAND", "type": "string", "constraints": {"enum": ["VALUE", "PCHG", "EXCESS_ULN", "EXCESS_BASE_OR_ULN"]}, "description": "VALUE = result in UNIT_SI; PCHG = (value - baseline) / baseline x 100; EXCESS_ULN = value - ULN; EXCESS_BASE_OR_ULN = value minus the baseline when the baseline is >ULN, otherwise value minus ULN"},
+    {"name": "THRESHOLD", "type": "string", "constraints": {"pattern": "^(-?[0-9]+(\\.[0-9]+)?|([0-9]+(\\.[0-9]+)?\\*)?(ULN|LLN|BASE))$"}, "description": "Number in THRESHOLD_UNIT, or a multiple of ULN, LLN or BASE (e.g. 3*ULN, 1.5*BASE, 0.25*LLN)"},
+    {"name": "THRESHOLD_UNIT", "type": "string", "description": "Unit of a numeric THRESHOLD: the analyte UNIT_SI, or % for PCHG"},
+    {"name": "THRESHOLD_CONV", "type": "string", "description": "The same bound as CTCAE prints it in conventional units (number in THRESHOLD_CONV_UNIT, or ULN/LLN); blank when CTCAE gives no conventional figure"},
+    {"name": "THRESHOLD_CONV_UNIT", "type": "string", "description": "Unit of THRESHOLD_CONV (analyte UNIT_CONV)"},
+    {"name": "CONDITION", "type": "string", "constraints": {"enum": ["VALUE>BASE"]}, "description": "Additional laboratory condition that must hold (AND): VALUE>BASE = the result exceeds the baseline"},
+    {"name": "QUALIFIER", "type": "string", "constraints": {"enum": ["ASYMPTOMATIC", "SYMPTOMATIC", "NO_INTERVENTION", "ON_ANTICOAGULATION"]}, "description": "Clinical qualifier attached to the clause; conventions.csv states which qualifiers the default and alternative profiles assume"},
+    {"name": "CONVENTION", "type": "string", "description": "Space-separated convention codes (conventions.csv) that govern how the clause is read"},
+    {"name": "SOURCE_DOC", "type": "string", "constraints": {"required": true}, "description": "Document the wording was transcribed from"},
+    {"name": "SOURCE_PAGE", "type": "integer", "constraints": {"required": true}, "description": "Printed page number of the term in SOURCE_DOC"},
+    {"name": "NOTE", "type": "string", "description": "Transcription note"}
+  ],
+  "primaryKey": ["RULE_ID", "CLAUSE_SEQ"],
+  "foreignKeys": [
+    {"fields": "LBTESTCD", "reference": {"resource": "analytes", "fields": "LBTESTCD"}}
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://specs.frictionlessdata.io/schemas/table-schema.json",
+  "name": "expectations",
+  "title": "Expected grades per record, version, profile and direction (long)",
+  "description": "The DEFAULT profile repeats the EXP_* columns of records.csv. Alternative profiles are published only for the records they change; a record absent under a profile keeps its DEFAULT expectation.",
+  "fields": [
+    {"name": "RECORD_ID", "type": "integer", "constraints": {"required": true}, "description": "records.csv key"},
+    {"name": "VERSION", "type": "integer", "constraints": {"required": true, "enum": [5, 6]}, "description": "CTCAE version"},
+    {"name": "PROFILE", "type": "string", "constraints": {"required": true, "enum": ["DEFAULT", "BESTCASE_ENZYMES", "HYPERGLY_NUMERIC_V5", "PRESENT_NOT_LAB", "UNGRADABLE_ZERO", "BASELINE_STRICT"]}, "description": "Convention profile (conventions.csv)"},
+    {"name": "DIRECTION", "type": "string", "constraints": {"required": true, "enum": ["LOW", "HIGH", "WORST"]}, "description": "LOW and HIGH scales, or WORST = single worst grade across directions"},
+    {"name": "GRADE", "type": "integer", "constraints": {"minimum": 0, "maximum": 4}, "description": "Expected grade; blank = not gradable"},
+    {"name": "TERM", "type": "string", "description": "Expected CTCAE term; blank when no term applies"},
+    {"name": "BASE_GRADE", "type": "integer", "constraints": {"minimum": 0, "maximum": 4}, "description": "Expected grade of the subject's baseline record in this direction; blank when there is no baseline or the record is NOT DONE"}
+  ],
+  "primaryKey": ["RECORD_ID", "VERSION", "PROFILE", "DIRECTION"],
+  "foreignKeys": [
+    {"fields": "RECORD_ID", "reference": {"resource": "records", "fields": "RECORD_ID"}}
+  ]
+}

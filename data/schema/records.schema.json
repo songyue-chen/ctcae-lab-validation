@@ -1,0 +1,429 @@
+{
+  "$schema": "https://specs.frictionlessdata.io/schemas/table-schema.json",
+  "name": "records",
+  "title": "Validation records: one laboratory result per row with expected CTCAE grades",
+  "description": "Feed the as-received columns (VAL, UNIT, LLN, ULN, DATE, REF_DATE, BASELINE_FLAG or BASE_*) to the implementation under test, merge its output back on RECORD_ID and compare with the EXP_* columns of the version being validated. Missing expected grade = not gradable, never 0. Terms compare case- and whitespace-insensitively.",
+  "fields": [
+    {
+      "name": "RECORD_ID",
+      "type": "integer",
+      "description": "Stable integer key; adopters carry it through their pipeline and merge their output back on it",
+      "constraints": {
+        "required": true,
+        "unique": true,
+        "minimum": 1
+      }
+    },
+    {
+      "name": "SUBJECT_ID",
+      "type": "string",
+      "description": "Synthetic subject, e.g. ALT-H-Y (<LBTESTCD>-<H|L>-<arm>); one subject per test x direction x baseline arm",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "SCENARIO_ID",
+      "type": "string",
+      "description": "Record scenario, e.g. ALT-H-Y-06 (<SUBJECT_ID>-BL for the baseline record)",
+      "constraints": {
+        "required": true,
+        "unique": true
+      }
+    },
+    {
+      "name": "MODULE",
+      "type": "string",
+      "description": "CORE = boundary records every implementation must pass; BASELINE = baseline selection and abnormal-baseline arms; MISSING = missing result or limit; NOTDONE = NOT DONE records; UNITS = foreign, alias or blank units; CATEGORY = same test code under another specimen",
+      "constraints": {
+        "required": true,
+        "enum": [
+          "CORE",
+          "BASELINE",
+          "MISSING",
+          "NOTDONE",
+          "UNITS",
+          "CATEGORY"
+        ]
+      }
+    },
+    {
+      "name": "RULE_IDS",
+      "type": "string",
+      "description": "Space-separated criteria.csv RULE_IDs the record exercises in both versions: the rules that give a grade of 1 or more, the lowest applicable rule whose bound the value does not cross (grade 0), or the rules that are unevaluable (grade missing)"
+    },
+    {
+      "name": "LBTESTCD",
+      "type": "string",
+      "description": "CDISC laboratory test code (analytes.csv; CD4 is sponsor-defined)",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "LBTEST",
+      "type": "string",
+      "description": "CDISC test name",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "LBSPEC",
+      "type": "string",
+      "description": "Specimen type (CDISC SPECTYPE submission value)",
+      "constraints": {
+        "required": true,
+        "enum": [
+          "SERUM",
+          "PLASMA",
+          "BLOOD",
+          "URINE"
+        ]
+      }
+    },
+    {
+      "name": "LBDUR",
+      "type": "string",
+      "description": "Collection duration (ISO 8601): PT24H marks a 24-hour collection",
+      "constraints": {
+        "enum": [
+          "PT24H"
+        ]
+      }
+    },
+    {
+      "name": "VAL",
+      "type": "number",
+      "description": "Result as an adopter's pipeline receives it, in UNIT (blank = missing result)"
+    },
+    {
+      "name": "UNIT",
+      "type": "string",
+      "description": "Unit of VAL, LLN and ULN as received (foreign spellings and blanks in the UNITS module)"
+    },
+    {
+      "name": "LLN",
+      "type": "number",
+      "description": "Lower limit of normal as received, in UNIT"
+    },
+    {
+      "name": "ULN",
+      "type": "number",
+      "description": "Upper limit of normal as received, in UNIT"
+    },
+    {
+      "name": "VAL_SI",
+      "type": "number",
+      "description": "VAL converted to UNIT_SI with the units.csv factor (blank when VAL is missing or UNIT is not convertible); a converted value is rounded to 6 decimals, so a boundary record is exact only in its as-received UNIT"
+    },
+    {
+      "name": "UNIT_SI",
+      "type": "string",
+      "description": "Analyte SI unit (analytes.csv UNIT_SI)"
+    },
+    {
+      "name": "LLN_SI",
+      "type": "number",
+      "description": "LLN in UNIT_SI"
+    },
+    {
+      "name": "ULN_SI",
+      "type": "number",
+      "description": "ULN in UNIT_SI"
+    },
+    {
+      "name": "VAL_CONV",
+      "type": "number",
+      "description": "VAL converted to UNIT_CONV (rounded to 6 decimals; informational: CTCAE prints its conventional and SI thresholds as rounded pairs, so grade a converted view only with the thresholds of the unit it is in)"
+    },
+    {
+      "name": "UNIT_CONV",
+      "type": "string",
+      "description": "Analyte conventional unit (analytes.csv UNIT_CONV)"
+    },
+    {
+      "name": "LLN_CONV",
+      "type": "number",
+      "description": "LLN in UNIT_CONV"
+    },
+    {
+      "name": "ULN_CONV",
+      "type": "number",
+      "description": "ULN in UNIT_CONV"
+    },
+    {
+      "name": "DATE",
+      "type": "date",
+      "description": "Collection date (ISO 8601)",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "STUDY_DAY",
+      "type": "integer",
+      "description": "Study day relative to REF_DATE: day 1 on REF_DATE, no day 0 (ADaM ADY convention)",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "REF_DATE",
+      "type": "date",
+      "description": "Reference date (first dose); records dated on or before it are pre-treatment",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "BASELINE_FLAG",
+      "type": "string",
+      "description": "Y on the baseline record of the subject's test and specimen (last pre-treatment record with a result, see convention BASELINE_SELECTION)",
+      "constraints": {
+        "enum": [
+          "Y"
+        ]
+      }
+    },
+    {
+      "name": "BASE_VAL",
+      "type": "number",
+      "description": "Baseline value as received, in BASE_UNIT (blank when the subject has no baseline or the record is NOT DONE)"
+    },
+    {
+      "name": "BASE_UNIT",
+      "type": "string",
+      "description": "Unit of the baseline record as received"
+    },
+    {
+      "name": "BASE_LLN",
+      "type": "number",
+      "description": "Baseline record's LLN as received, in BASE_UNIT"
+    },
+    {
+      "name": "BASE_ULN",
+      "type": "number",
+      "description": "Baseline record's ULN as received, in BASE_UNIT"
+    },
+    {
+      "name": "BASE_VAL_SI",
+      "type": "number",
+      "description": "Baseline value in UNIT_SI"
+    },
+    {
+      "name": "BASE_LLN_SI",
+      "type": "number",
+      "description": "Baseline record's LLN in UNIT_SI"
+    },
+    {
+      "name": "BASE_ULN_SI",
+      "type": "number",
+      "description": "Baseline record's ULN in UNIT_SI"
+    },
+    {
+      "name": "BASE_VAL_CONV",
+      "type": "number",
+      "description": "Baseline value in UNIT_CONV"
+    },
+    {
+      "name": "BASE_LLN_CONV",
+      "type": "number",
+      "description": "Baseline record's LLN in UNIT_CONV"
+    },
+    {
+      "name": "BASE_ULN_CONV",
+      "type": "number",
+      "description": "Baseline record's ULN in UNIT_CONV"
+    },
+    {
+      "name": "STATUS",
+      "type": "string",
+      "description": "NOT DONE marker (CDISC LBSTAT); blank otherwise",
+      "constraints": {
+        "enum": [
+          "NOT DONE"
+        ]
+      }
+    },
+    {
+      "name": "GRADABLE",
+      "type": "string",
+      "description": "Y = a grade is expected in at least one direction and version; N = no grade is expected at all (missing result or needed limit, unknown or blank unit on an absolute-threshold test, no criterion for the test and specimen, NOT DONE)",
+      "constraints": {
+        "required": true,
+        "enum": [
+          "Y",
+          "N"
+        ]
+      }
+    },
+    {
+      "name": "EXP_GRADE_LOW_V5",
+      "type": "integer",
+      "description": "Expected CTCAE v5 grade on the LOW scale under the DEFAULT profile; 0 = normal; blank = not gradable or no LOW term",
+      "constraints": {
+        "minimum": 0,
+        "maximum": 4
+      }
+    },
+    {
+      "name": "EXP_GRADE_HIGH_V5",
+      "type": "integer",
+      "description": "Expected CTCAE v5 grade on the HIGH scale under the DEFAULT profile; blank = not gradable or no HIGH term",
+      "constraints": {
+        "minimum": 0,
+        "maximum": 4
+      }
+    },
+    {
+      "name": "EXP_TERM_LOW_V5",
+      "type": "string",
+      "description": "Expected CTCAE v5 term of the LOW scale whenever the scale applies to the test (also at grade 0 and for a missing result); blank when no term applies or the record is NOT DONE"
+    },
+    {
+      "name": "EXP_TERM_HIGH_V5",
+      "type": "string",
+      "description": "Expected CTCAE v5 term of the HIGH scale whenever the scale applies"
+    },
+    {
+      "name": "EXP_BASE_GRADE_LOW_V5",
+      "type": "integer",
+      "description": "Expected v5 LOW grade of the subject's baseline record (blank without baseline or on NOT DONE records)",
+      "constraints": {
+        "minimum": 0,
+        "maximum": 4
+      }
+    },
+    {
+      "name": "EXP_BASE_GRADE_HIGH_V5",
+      "type": "integer",
+      "description": "Expected v5 HIGH grade of the subject's baseline record",
+      "constraints": {
+        "minimum": 0,
+        "maximum": 4
+      }
+    },
+    {
+      "name": "EXP_GRADE_V5",
+      "type": "integer",
+      "description": "Single worst v5 grade for single-scale designs: the maximum of the non-missing LOW and HIGH grades; blank when both are missing",
+      "constraints": {
+        "minimum": 0,
+        "maximum": 4
+      }
+    },
+    {
+      "name": "EXP_TERM_V5",
+      "type": "string",
+      "description": "Term of the direction that gives EXP_GRADE_V5; when the grade is 0 and both directions have a term, blank"
+    },
+    {
+      "name": "EXP_GRADE_LOW_V6",
+      "type": "integer",
+      "description": "Expected CTCAE v6 grade on the LOW scale under the DEFAULT profile; 0 = normal; blank = not gradable or no LOW term",
+      "constraints": {
+        "minimum": 0,
+        "maximum": 4
+      }
+    },
+    {
+      "name": "EXP_GRADE_HIGH_V6",
+      "type": "integer",
+      "description": "Expected CTCAE v6 grade on the HIGH scale under the DEFAULT profile; blank = not gradable or no HIGH term",
+      "constraints": {
+        "minimum": 0,
+        "maximum": 4
+      }
+    },
+    {
+      "name": "EXP_TERM_LOW_V6",
+      "type": "string",
+      "description": "Expected CTCAE v6 term of the LOW scale whenever the scale applies to the test (also at grade 0 and for a missing result); blank when no term applies or the record is NOT DONE"
+    },
+    {
+      "name": "EXP_TERM_HIGH_V6",
+      "type": "string",
+      "description": "Expected CTCAE v6 term of the HIGH scale whenever the scale applies"
+    },
+    {
+      "name": "EXP_BASE_GRADE_LOW_V6",
+      "type": "integer",
+      "description": "Expected v6 LOW grade of the subject's baseline record (blank without baseline or on NOT DONE records)",
+      "constraints": {
+        "minimum": 0,
+        "maximum": 4
+      }
+    },
+    {
+      "name": "EXP_BASE_GRADE_HIGH_V6",
+      "type": "integer",
+      "description": "Expected v6 HIGH grade of the subject's baseline record",
+      "constraints": {
+        "minimum": 0,
+        "maximum": 4
+      }
+    },
+    {
+      "name": "EXP_GRADE_V6",
+      "type": "integer",
+      "description": "Single worst v6 grade for single-scale designs: the maximum of the non-missing LOW and HIGH grades; blank when both are missing",
+      "constraints": {
+        "minimum": 0,
+        "maximum": 4
+      }
+    },
+    {
+      "name": "EXP_TERM_V6",
+      "type": "string",
+      "description": "Term of the direction that gives EXP_GRADE_V6; when the grade is 0 and both directions have a term, blank"
+    },
+    {
+      "name": "VERSION_DELTA",
+      "type": "string",
+      "description": "Y when any v5 expectation differs from the v6 expectation of the record",
+      "constraints": {
+        "required": true,
+        "enum": [
+          "Y",
+          "N"
+        ]
+      }
+    },
+    {
+      "name": "CONVENTIONS",
+      "type": "string",
+      "description": "Space-separated conventions.csv codes whose reading the record's expectations rely on"
+    },
+    {
+      "name": "CONVENTION_DEP",
+      "type": "string",
+      "description": "Y when a documented alternative reading of one of the record's conventions would change an expectation (conventions.csv CONVENTION_DEP = Y); exclude these records to validate against undisputed criteria only",
+      "constraints": {
+        "required": true,
+        "enum": [
+          "Y",
+          "N"
+        ]
+      }
+    },
+    {
+      "name": "DESCRIPTION",
+      "type": "string",
+      "description": "What the record proves, in plain words",
+      "constraints": {
+        "required": true
+      }
+    }
+  ],
+  "primaryKey": "RECORD_ID",
+  "foreignKeys": [
+    {
+      "fields": "LBTESTCD",
+      "reference": {
+        "resource": "analytes",
+        "fields": "LBTESTCD"
+      }
+    }
+  ]
+}
