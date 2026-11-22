@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below. Data and documentation are CC BY 4.0, code is MIT."
+title: "ctcae-lab-validation: validation dataset for CTCAE laboratory grading implementations"
+type: dataset
+version: 1.0.0
+date-released: 2026-10-15
+license: CC-BY-4.0
+authors:
+  - name: "ctcae-lab-validation contributors"
+keywords:
+  - CTCAE
+  - laboratory toxicity grading
+  - validation dataset
+  - CDISC
+  - SDTM
+  - ADaM
+abstract: >-
+  Vendor-neutral validation records for implementations of CTCAE v5.0 and v6.0 laboratory grading: one record at,
+  one step above and one step below every laboratory threshold of both versions, with the expected grade and term
+  of each version, the criteria rules exercised and the reading conventions relied on. Includes a machine-readable
+  transcription of the CTCAE laboratory criteria with verbatim wording, CDISC test codes, SI and conventional
+  views, and reference comparators for SAS and R.
+# identifiers:
+#   - type: doi
+#     value: to be added when the Zenodo record of release 1.0.0 exists

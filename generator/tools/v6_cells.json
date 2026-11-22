@@ -1,0 +1,722 @@
+[
+ {
+  "version": 6,
+  "term": "Anemia",
+  "page": 4,
+  "pdf_page": 4,
+  "grades": {
+   "1": "Hemoglobin (Hgb) <LLN - 10.0 g/dL; <LLN - 6.2 mmol/L; <LLN - 100 g/L",
+   "2": "Hgb <10.0 - 8.0 g/dL; <6.2 - 4.9 mmol/L; <100 - 80 g/L",
+   "3": "Hgb <8.0 g/dL; <4.9 mmol/L; <80 g/L; transfusion indicated",
+   "4": "Life-threatening consequences; urgent intervention indicated",
+   "5": "Death"
+  },
+  "definition": "A disorder characterized by a reduction in the amount of hemoglobin in 100 ml of blood. Signs and symptoms of anemia may include pallor of the skin and mucous membranes, shortness of breath, palpitations of the heart, soft systolic murmurs, lethargy, and fatigability.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "Eosinophilia",
+  "page": null,
+  "pdf_page": 6,
+  "grades": {
+   "1": ">ULN and >Baseline",
+   "2": "-",
+   "3": "Steroids initiated",
+   "4": "-",
+   "5": "-"
+  },
+  "definition": "A disorder characterized by laboratory test results that indicate an increased number of eosinophils in the blood.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "Leukocytosis",
+  "page": null,
+  "pdf_page": 7,
+  "grades": {
+   "1": "-",
+   "2": "-",
+   "3": ">100,000/mm3",
+   "4": "Clinical manifestations of leucostasis; urgent intervention indicated",
+   "5": "Death"
+  },
+  "definition": "A disorder characterized by laboratory test results that indicate an increased number of white blood cells in the blood.",
+  "nav": "Do not use for increases due to growth factors, steroids, or leukemias."
+ },
+ {
+  "version": 6,
+  "term": "Lymphopenia",
+  "page": null,
+  "pdf_page": 8,
+  "grades": {
+   "1": "Present",
+   "2": "-",
+   "3": "-",
+   "4": "-",
+   "5": "-"
+  },
+  "definition": "A finding based on laboratory test results that indicate a decrease in number of lymphocytes in a blood specimen.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "Methemoglobinemia",
+  "page": null,
+  "pdf_page": 8,
+  "grades": {
+   "1": "-",
+   "2": ">ULN",
+   "3": "Requiring urgent intervention",
+   "4": "Life-threatening consequences",
+   "5": "Death"
+  },
+  "definition": "A disorder characterized by laboratory test results that indicate increased methemoglobin in the blood.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "Thrombocytopenia",
+  "page": null,
+  "pdf_page": 8,
+  "grades": {
+   "1": "<LLN - 75,000/mm3; <LLN - 75.0 x 10^9/L",
+   "2": "<75,000 - 50,000/mm3; <75.0 - 50.0 x 10^9/L",
+   "3": "<50,000 - 10,000/mm3; <50.0 - 10.0 x 10^9/L; transfusion indicated",
+   "4": "<10,000/mm3; x 10^9/L; <10.0 life-threatening consequences; urgent intervention indicated",
+   "5": "Death"
+  },
+  "definition": "A disorder characterized by a decrease in number of platelets in a blood specimen.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "Activated partial thromboplastin time prolonged",
+  "page": 162,
+  "pdf_page": 162,
+  "grades": {
+   "1": ">ULN - 1.5 x ULN",
+   "2": ">1.5 - 2.5 x ULN",
+   "3": ">2.5 x ULN; bleeding",
+   "4": "-",
+   "5": "-"
+  },
+  "definition": "A finding based on laboratory test results in which the partial thromboplastin time is found to be greater than the control value. As a possible indicator of coagulopathy, a prolonged partial thromboplastin time (PTT) may occur in a variety of diseases and disorders, both primary and related to treatment.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "Alanine aminotransferase increased",
+  "page": 162,
+  "pdf_page": 162,
+  "grades": {
+   "1": ">ULN - 3.0 x ULN if baseline was normal or less than normal; 1.0 - 1.5 x baseline if baseline was >ULN",
+   "2": ">3.0 - 5.0 x ULN if baseline was normal or less than normal; >1.5 - 2.0 x baseline if baseline was >ULN",
+   "3": ">5.0 - 20.0 x ULN if baseline was normal or less than normal; >2.0 - 4.0 x baseline if baseline was >ULN up to 5 x ULN",
+   "4": ">20.0 x ULN if baseline was normal or less than normal; >4.0 x baseline if baseline was >ULN",
+   "5": "-"
+  },
+  "definition": "A finding based on laboratory test results that indicate an increase in the level of alanine aminotransferase (ALT or SGPT) in the blood specimen.",
+  "nav": "Consider Hepatobiliary disorders: Hepatic failure. Report Autoimmune hepatitis under Hepatobiliary disorders: Other, specify."
+ },
+ {
+  "version": 6,
+  "term": "Alkaline phosphatase increased",
+  "page": 162,
+  "pdf_page": 162,
+  "grades": {
+   "1": ">Baseline and ULN",
+   "2": "-",
+   "3": "-",
+   "4": "-",
+   "5": "-"
+  },
+  "definition": "A finding based on laboratory test results that indicate an increase in the level of alkaline phosphatase (ALP) in a blood specimen.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "Aspartate aminotransferase increased",
+  "page": null,
+  "pdf_page": 163,
+  "grades": {
+   "1": ">ULN - 3.0 x ULN if baseline was normal or less than normal; 1.0 - 1.5 x baseline if baseline was >ULN",
+   "2": ">3.0 - 5.0 x ULN if baseline was normal or less than normal; >1.5 - 2.0 x baseline if baseline was >ULN",
+   "3": ">5.0 - 20.0 x ULN if baseline was normal or less than normal; >2.0 - 4.0 x baseline if baseline was >ULN up to 5 x ULN",
+   "4": ">20.0 x ULN if baseline was normal or less than normal; >4.0 x baseline if baseline was >ULN",
+   "5": "-"
+  },
+  "definition": "A finding based on laboratory test results that indicate an increase in the level of aspartate aminotransferase (AST or SGOT) in a blood specimen.",
+  "nav": "Consider Hepatobiliary disorders: Hepatic failure. Report Autoimmune hepatitis under Hepatobiliary disorders: Other, specify."
+ },
+ {
+  "version": 6,
+  "term": "Blood bicarbonate decreased",
+  "page": null,
+  "pdf_page": 163,
+  "grades": {
+   "1": "<LLN and no intervention initiated",
+   "2": "-",
+   "3": "-",
+   "4": "-",
+   "5": "-"
+  },
+  "definition": "A finding based on laboratory test results that indicate a decrease in levels of bicarbonate in a venous blood specimen.",
+  "nav": "Consider Metabolism and nutrition disorders: Acidosis, Alkalosis."
+ },
+ {
+  "version": 6,
+  "term": "Blood bilirubin increased",
+  "page": null,
+  "pdf_page": 164,
+  "grades": {
+   "1": ">ULN - 1.5 x ULN if baseline was normal or less than normal; 1.0 - 1.5 x baseline if baseline was >ULN",
+   "2": ">1.5 - 3.0 x ULN if baseline was normal or less than normal; >1.5 - 2.5 x baseline if baseline was >ULN",
+   "3": ">3.0 - 10.0 x ULN if baseline was normal or less than normal; >2.5 - 10.0 x baseline if baseline was >ULN",
+   "4": ">10.0 x ULN if baseline was normal or less than normal; >10.0 x baseline if baseline was >ULN",
+   "5": "-"
+  },
+  "definition": "A finding based on laboratory test results that indicate an abnormally high level of total bilirubin in the blood. Excess bilirubin is associated with jaundice.",
+  "nav": "Consider Hepatobiliary disorders: Hepatic failure. Report Autoimmune hepatitis under Hepatobiliary disorders: Other, specify."
+ },
+ {
+  "version": 6,
+  "term": "Blood lactate dehydrogenase increased",
+  "page": null,
+  "pdf_page": 164,
+  "grades": {
+   "1": ">ULN",
+   "2": "-",
+   "3": "-",
+   "4": "-",
+   "5": "-"
+  },
+  "definition": "A finding based on laboratory test results that indicate increased levels of lactate dehydrogenase (LDH) in the blood specimen.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "CD4 lymphocytes decreased",
+  "page": null,
+  "pdf_page": 165,
+  "grades": {
+   "1": "<LLN - 500/mm3; <LLN - 0.5 x 10^9/L",
+   "2": "<500 - 200/mm3; <0.5 - 0.2 x 10^9/L",
+   "3": "<200 - 50/mm3; <0.2 - 0.05 x 10^9/L",
+   "4": "<50/mm3; <0.05 x 10^9/L",
+   "5": "-"
+  },
+  "definition": "A finding based on laboratory test results that indicate a decrease in levels of CD4 lymphocytes in a blood specimen.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "Cholesterol high",
+  "page": null,
+  "pdf_page": 166,
+  "grades": {
+   "1": ">ULN - 300 mg/dL; >ULN - 7.75 mmol/L",
+   "2": ">300 - 400 mg/dL; >7.75 - 10.34 mmol/L",
+   "3": ">400 - 500 mg/dL; >10.34 - 12.92 mmol/L",
+   "4": ">500 mg/dL; >12.92 mmol/L",
+   "5": "-"
+  },
+  "definition": "A finding based on laboratory test results that indicate higher than normal levels of cholesterol in a blood specimen.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "Creatinine clearance decreased",
+  "page": null,
+  "pdf_page": 166,
+  "grades": {
+   "1": "-",
+   "2": "26 - 49 ml/min",
+   "3": "10 - 25 ml/min",
+   "4": "-",
+   "5": "-"
+  },
+  "definition": "A finding based on laboratory test results that indicate a decrease in creatinine clearance (CrCl) in a 24-hour urine collection.",
+  "nav": "Report Grade 4 and 5 as Renal and urinary disorders: Acute kidney injury or Chronic kidney disease."
+ },
+ {
+  "version": 6,
+  "term": "Creatinine increased",
+  "page": null,
+  "pdf_page": 166,
+  "grades": {
+   "1": ">ULN - 1.5 x ULN",
+   "2": ">1.5 - 3.0 x baseline if baseline is below LLN; >1.5 - 3.0 x ULN",
+   "3": ">3.0 x baseline if baseline is below LLN; >3.0 - 6.0 x ULN",
+   "4": ">6.0 x ULN",
+   "5": "-"
+  },
+  "definition": "A finding based on laboratory test results that indicate increased levels of creatinine in a biological specimen.",
+  "nav": "Consider Renal and urinary disorders: Acute kidney injury, Glomerulonephritis, Tubulointerstitial nephritis."
+ },
+ {
+  "version": 6,
+  "term": "Fibrinogen decreased",
+  "page": null,
+  "pdf_page": 167,
+  "grades": {
+   "1": "<1.0 - 0.75 x LLN; if abnormal, <25% decrease from baseline",
+   "2": "<0.75 - 0.5 x LLN; if abnormal, 25 - <50% decrease from baseline",
+   "3": "<0.5 - 0.25 x LLN; if abnormal, 50 - <75% decrease from baseline",
+   "4": "<0.25 x LLN; if abnormal, 75% decrease from baseline; absolute value <50 mg/dL",
+   "5": "-"
+  },
+  "definition": "A finding based on laboratory test results that indicate an decrease in levels of fibrinogen in a blood specimen.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "GGT increased",
+  "page": null,
+  "pdf_page": 167,
+  "grades": {
+   "1": ">ULN - 2.5 x ULN if baseline was normal or less than normal; 1.0 - 1.5 x baseline if baseline was >ULN",
+   "2": ">2.5 - 5.0 x ULN if baseline was normal or less than normal; >1.5 - 3.0 x baseline if baseline was >ULN",
+   "3": ">5.0 - 20.0 x ULN if baseline was normal or less than normal; >3.0 - 10.0 x baseline if baseline was >ULN",
+   "4": ">20.0 x ULN if baseline was normal or less than normal; >10.0 x baseline if baseline was >ULN",
+   "5": "-"
+  },
+  "definition": "A finding based on laboratory test results that indicate higher than normal levels of the enzyme gamma-glutamyltransferase in the blood specimen. GGT (gamma-glutamyltransferase ) catalyzes the transfer of a gamma glutamyl group from a gamma glutamyl peptide to another peptide, amino acids or water.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "Haptoglobin decreased",
+  "page": null,
+  "pdf_page": 168,
+  "grades": {
+   "1": "<LLN",
+   "2": "-",
+   "3": "-",
+   "4": "-",
+   "5": "-"
+  },
+  "definition": "A finding based on laboratory test results that indicate an decrease in levels of haptoglobin (HP) in a blood specimen.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "HDL decreased",
+  "page": null,
+  "pdf_page": 168,
+  "grades": {
+   "1": "<LLN",
+   "2": "-",
+   "3": "-",
+   "4": "-",
+   "5": "-"
+  },
+  "definition": "A finding based on laboratory test results that indicate a decrease in HDL in a blood specimen.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "Hemoglobin increased",
+  "page": null,
+  "pdf_page": 168,
+  "grades": {
+   "1": "Increase in >0 - 2 g/dL above ULN",
+   "2": "Increase in >2 - 4 g/dL above ULN",
+   "3": "Increase in >4 g/dL above ULN",
+   "4": "-",
+   "5": "-"
+  },
+  "definition": "A finding based on laboratory test results that indicate increased levels of hemoglobin (Hgb) above normal.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "INR increased",
+  "page": null,
+  "pdf_page": 169,
+  "grades": {
+   "1": ">1.2 - 1.5; >1 - 1.5 x baseline if on anticoagulation; monitoring only indicated",
+   "2": ">1.5 - 2.5; >1.5 - 2.5 x baseline if on anticoagulation; dose adjustment indicated",
+   "3": ">2.5; >2.5 x baseline if on anticoagulation; bleeding",
+   "4": "-",
+   "5": "-"
+  },
+  "definition": "A finding based on laboratory test results that indicate an increase in the ratio of the patient's prothrombin time (PT) to a control sample in the blood.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "LDL increased",
+  "page": null,
+  "pdf_page": 169,
+  "grades": {
+   "1": ">ULN",
+   "2": "-",
+   "3": "-",
+   "4": "-",
+   "5": "-"
+  },
+  "definition": "A finding based on laboratory test results that indicate an increase in LDL in a blood specimen.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "Lipase increased",
+  "page": null,
+  "pdf_page": 170,
+  "grades": {
+   "1": ">ULN - 1.5 x ULN",
+   "2": ">1.5 - 3.0 x ULN; >3.0 - 5.0 x ULN and asymptomatic",
+   "3": ">3.0 - 5.0 x ULN with signs or symptoms; >5.0 x ULN and asymptomatic",
+   "4": ">5.0 x ULN and with signs or symptoms",
+   "5": "-"
+  },
+  "definition": "A finding based on laboratory test results that indicate an increase in the level of lipase in a biological specimen.",
+  "nav": "Consider Gastrointestinal disorders: Pancreatitis."
+ },
+ {
+  "version": 6,
+  "term": "Lymphocyte count increased",
+  "page": null,
+  "pdf_page": 170,
+  "grades": {
+   "1": "-",
+   "2": ">4000/mm3 - 20,000/mm3",
+   "3": ">20,000/mm3",
+   "4": "-",
+   "5": "-"
+  },
+  "definition": "A finding based on laboratory test results that indicate an abnormal increase in the number of lymphocytes in the blood, effusions or bone marrow.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "Neutrophil count decreased",
+  "page": null,
+  "pdf_page": 170,
+  "grades": {
+   "1": "<1500 - 1000/mm3; <1.5 - 1.0 x 10^9/L",
+   "2": "<1000 - 500/mm3; <1.0 - 0.5 x 10^9/L",
+   "3": "<500 - 100/mm3; <0.5 - 0.1 x 10^9/L",
+   "4": "<100/mm3; <0.1 x 10^9/L",
+   "5": "-"
+  },
+  "definition": "A finding based on laboratory test results that indicate a decrease in number of neutrophils (ANC) in a blood specimen.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "Neutrophil count increased",
+  "page": null,
+  "pdf_page": 170,
+  "grades": {
+   "1": "Present",
+   "2": "-",
+   "3": "-",
+   "4": "-",
+   "5": "-"
+  },
+  "definition": "A finding based on laboratory test results that indicate an increase in number of neutrophils (ANC) in a blood specimen.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "Serum amylase increased",
+  "page": null,
+  "pdf_page": 171,
+  "grades": {
+   "1": ">ULN - 1.5 x ULN",
+   "2": ">1.5 - 2.0 x ULN; >2.0 - 5.0 x ULN and asymptomatic or with mild signs or symptoms",
+   "3": ">2.0 - 5.0 x ULN with moderate or severe signs or symptoms; >5.0 x ULN and asymptomatic",
+   "4": ">5.0 x ULN and with signs or symptoms",
+   "5": "-"
+  },
+  "definition": "A finding based on laboratory test results that indicate an increase in the levels of amylase in a serum specimen.",
+  "nav": "Consider Gastrointestinal disorders: Pancreatitis."
+ },
+ {
+  "version": 6,
+  "term": "Urinary protein increased",
+  "page": null,
+  "pdf_page": 171,
+  "grades": {
+   "1": "Adult: 1+ proteinuria; urinary protein ≥ULN - <1.0 g/24 hrs; P/C <1; Pediatric: 1 + proteinuria",
+   "2": "Adult: 2+ and 3+ proteinuria; urinary protein 1.0 - <3.5 g/24 hrs; P/C 1 - 3.5; Pediatric: Urine P/C (Protein/Creatinine) ratio 0.5 - 1.9; 2 - 3+ proteinuria",
+   "3": "Adult: Urinary protein >=3.5 g/24 hrs; 4+ proteinuria; P/C >3.5; Pediatric: Urine P/C (Protein/Creatinine) ratio >1.9, 4+ proteinuria",
+   "4": "-",
+   "5": "-"
+  },
+  "definition": "A finding based on laboratory test results that indicate the presence of excessive protein in the urine. It is predominantly albumin, but also globulin.",
+  "nav": "24-hour urine collection takes precedence over dipstick."
+ },
+ {
+  "version": 6,
+  "term": "Vitamin D decreased",
+  "page": null,
+  "pdf_page": 172,
+  "grades": {
+   "1": "Vitamin D decreased <LLN",
+   "2": "-",
+   "3": "-",
+   "4": "-",
+   "5": "-"
+  },
+  "definition": "A finding based on laboratory test results that indicate a low concentration of Vitamin D in the blood.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "White blood cell decreased",
+  "page": null,
+  "pdf_page": 173,
+  "grades": {
+   "1": "<LLN - 3000/mm3; <LLN - 3.0 x 10^9/L",
+   "2": "<3000 - 2000/mm3; <3.0 - 2.0 x 10^9/L",
+   "3": "<2000 - 1000/mm3; <2.0 - 1.0 x 10^9/L",
+   "4": "<1000/mm3; <1.0 x 10^9/L",
+   "5": "-"
+  },
+  "definition": "A finding based on laboratory test results that indicate a decrease in number of white blood cells (WBC) in a blood specimen.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "Hypercalcemia",
+  "page": null,
+  "pdf_page": 176,
+  "grades": {
+   "1": "Corrected serum calcium of >ULN - 11.5 mg/dL; >ULN - 2.9 mmol/L; Ionized calcium >ULN - 1.5 mmol/L",
+   "2": "Corrected serum calcium of >11.5 - 12.5 mg/dL; >2.9 - 3.1 mmol/L; Ionized calcium >1.5 - 1.6 mmol/L; symptomatic",
+   "3": "Corrected serum calcium of >12.5 - 13.5 mg/dL; >3.1 - 3.4 mmol/L; Ionized calcium >1.6 - 1.8 mmol/L; hospitalization indicated",
+   "4": "Corrected serum calcium of >13.5 mg/dL; >3.4 mmol/L; Ionized calcium >1.8 mmol/L; life-threatening consequences",
+   "5": "Death"
+  },
+  "definition": "A disorder characterized by laboratory test results that indicate an elevation in the concentration of calcium (corrected for albumin) in blood.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "Hyperglycemia",
+  "page": null,
+  "pdf_page": 176,
+  "grades": {
+   "1": "Fasting glucose value >ULN - 160 mg/dL; Fasting glucose value >ULN - 8.9 mmol/L",
+   "2": "Fasting glucose value >160 - 250 mg/dL; Fasting glucose value >8.9 - 13.9 mmol/L",
+   "3": ">250 - 500 mg/dL; >13.9 - 27.8 mmol/L; hospitalization indicated",
+   "4": ">500 mg/dL; >27.8 mmol/L; life-threatening consequences",
+   "5": "-"
+  },
+  "definition": "A condition characterized by laboratory test results that indicate a confirmed, short lasting and unexpected elevation in the concentration of blood sugar (glycemia).",
+  "nav": "Consider Metabolism and nutrition disorders: Diabetes mellitus."
+ },
+ {
+  "version": 6,
+  "term": "Hyperkalemia",
+  "page": null,
+  "pdf_page": 177,
+  "grades": {
+   "1": ">ULN - 5.5 mmol/L",
+   "2": ">5.5 - 6.0 mmol/L; intervention initiated",
+   "3": ">6.0 - 7.0 mmol/L; hospitalization indicated",
+   "4": ">7.0 mmol/L; life-threatening consequences",
+   "5": "Death"
+  },
+  "definition": "A disorder characterized by laboratory test results that indicate an elevation in the concentration of potassium in the blood; associated with kidney failure or sometimes with the use of diuretic drugs.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "Hypermagnesemia",
+  "page": null,
+  "pdf_page": 177,
+  "grades": {
+   "1": ">ULN - 3.0 mg/dL; >ULN - 1.23 mmol/L",
+   "2": "-",
+   "3": ">3.0 - 8.0 mg/dL; >1.23 - 3.30 mmol/L",
+   "4": ">8.0 mg/dL; >3.30 mmol/L; life-threatening consequences",
+   "5": "Death"
+  },
+  "definition": "A disorder characterized by laboratory test results that indicate an elevation in the concentration of magnesium in the blood.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "Hypernatremia",
+  "page": null,
+  "pdf_page": 177,
+  "grades": {
+   "1": ">ULN - 150 mmol/L",
+   "2": ">150 - 155 mmol/L; intervention initiated",
+   "3": ">155 - 160 mmol/L; hospitalization indicated",
+   "4": ">160 mmol/L; life- threatening consequences",
+   "5": "Death"
+  },
+  "definition": "A disorder characterized by laboratory test results that indicate an elevation in the concentration of sodium in the blood.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "Hyperphosphatemia",
+  "page": null,
+  "pdf_page": 178,
+  "grades": {
+   "1": "Laboratory finding only and intervention not indicated",
+   "2": "Noninvasive intervention indicated",
+   "3": "Severe or medically significant but not immediately life-threatening; hospitalization or prolongation of existing hospitalization indicated",
+   "4": "Life-threatening consequences; urgent intervention indicated (e.g., dialysis)",
+   "5": "Death"
+  },
+  "definition": "A disorder characterized by laboratory test results that indicate an elevation in the concentration of phosphate in a blood.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "Hypertriglyceridemia",
+  "page": null,
+  "pdf_page": 178,
+  "grades": {
+   "1": "150 mg/dL - 300 mg/dL; 1.71 mmol/L - 3.42 mmol/L",
+   "2": ">300 mg/dL - 500 mg/dL; >3.42 mmol/L - 5.7 mmol/L",
+   "3": ">500 mg/dL - 1000 mg/dL; >5.7 mmol/L - 11.4 mmol/L",
+   "4": ">1000 mg/dL; >11.4 mmol/L; life-threatening consequences",
+   "5": "Death"
+  },
+  "definition": "A disorder characterized by laboratory test results that indicate an elevation in the concentration of triglyceride concentration in the blood.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "Hyperuricemia",
+  "page": null,
+  "pdf_page": 178,
+  "grades": {
+   "1": ">ULN without physiologic consequences",
+   "2": "-",
+   "3": ">ULN with physiologic consequences",
+   "4": "Life-threatening consequences",
+   "5": "Death"
+  },
+  "definition": "A disorder characterized by laboratory test results that indicate an elevation in the concentration of uric acid.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "Hypoalbuminemia",
+  "page": null,
+  "pdf_page": 179,
+  "grades": {
+   "1": "<LLN - 3 g/dL; <LLN - 30 g/L",
+   "2": "<3 - 2 g/dL; <30 - 20 g/L",
+   "3": "<2 g/dL; <20 g/L",
+   "4": "Life-threatening consequences; urgent intervention indicated",
+   "5": "Death"
+  },
+  "definition": "A disorder characterized by laboratory test results that indicate a low concentration of albumin in the blood.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "Hypocalcemia",
+  "page": null,
+  "pdf_page": 179,
+  "grades": {
+   "1": "Corrected serum calcium of <LLN - 8.0 mg/dL; <LLN - 2.0 mmol/L; Ionized calcium <LLN - 1.0 mmol/L",
+   "2": "Corrected serum calcium of <8.0 - 7.0 mg/dL; <2.0 - 1.75 mmol/L; Ionized calcium <1.0 - 0.9 mmol/L; symptomatic",
+   "3": "Corrected serum calcium of <7.0 - 6.0 mg/dL; <1.75 - 1.5 mmol/L; Ionized calcium <0.9 - 0.8 mmol/L; hospitalization indicated",
+   "4": "Corrected serum calcium of <6.0 mg/dL; <1.5 mmol/L; Ionized calcium <0.8 mmol/L; life-threatening consequences",
+   "5": "Death"
+  },
+  "definition": "A disorder characterized by laboratory test results that indicate a low concentration of calcium (corrected for albumin) in the blood.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "Hypoglycemia",
+  "page": null,
+  "pdf_page": 179,
+  "grades": {
+   "1": "<LLN - 55 mg/dL; <LLN - 3.0 mmol/L",
+   "2": "<55 - 40 mg/dL; <3.0 - 2.2 mmol/L",
+   "3": "<40 - 30 mg/dL; <2.2 - 1.7 mmol/L",
+   "4": "<30 mg/dL; <1.7 mmol/L; life- threatening consequences; seizures",
+   "5": "Death"
+  },
+  "definition": "A condition characterized by laboratory test results that indicate a low concentration of glucose in the blood.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "Hypokalemia",
+  "page": null,
+  "pdf_page": 180,
+  "grades": {
+   "1": "<LLN - 3.0 mmol/L",
+   "2": "Symptomatic with <LLN - 3.0 mmol/L; intervention indicated",
+   "3": "<3.0 - 2.5 mmol/L; hospitalization indicated",
+   "4": "<2.5 mmol/L; life-threatening consequences",
+   "5": "Death"
+  },
+  "definition": "A disorder characterized by laboratory test results that indicate a low concentration of potassium in the blood.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "Hypomagnesemia",
+  "page": null,
+  "pdf_page": 180,
+  "grades": {
+   "1": "<LLN - 1.2 mg/dL; <LLN - 0.5 mmol/L",
+   "2": "<1.2 - 0.9 mg/dL; <0.5 - 0.4 mmol/L",
+   "3": "<0.9 - 0.7 mg/dL; <0.4 - 0.3 mmol/L",
+   "4": "<0.7 mg/dL; <0.3 mmol/L; life-threatening consequences",
+   "5": "Death"
+  },
+  "definition": "A disorder characterized by laboratory test results that indicate a low concentration of magnesium in the blood.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "Hyponatremia",
+  "page": null,
+  "pdf_page": 180,
+  "grades": {
+   "1": "<LLN - 130 mmol/L",
+   "2": "125 - <130 mmol/L and asymptomatic",
+   "3": "125 - <130 mmol/L symptomatic; 120 - <125 mmol/L regardless of symptoms",
+   "4": "<120 mmol/L; life- threatening consequences",
+   "5": "Death"
+  },
+  "definition": "A disorder characterized by laboratory test results that indicate a low concentration of sodium in the blood.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "Hypophosphatemia",
+  "page": null,
+  "pdf_page": 181,
+  "grades": {
+   "1": "Laboratory finding only and intervention not indicated",
+   "2": "Oral replacement therapy indicated",
+   "3": "Severe or medically significant but not immediately life-threatening; hospitalization or prolongation of existing hospitalization indicated",
+   "4": "Life-threatening consequences",
+   "5": "Death"
+  },
+  "definition": "A disorder characterized by laboratory test results that indicate a low concentration of phosphates in the blood.",
+  "nav": "-"
+ },
+ {
+  "version": 6,
+  "term": "Chronic kidney disease",
+  "page": null,
+  "pdf_page": 242,
+  "grades": {
+   "1": "eGFR (estimated Glomerular Filtration Rate) or CrCl (creatinine clearance) <LLN - 60 ml/min/1.73 m2 or proteinuria 2+ present; urine protein/creatinine >0.5",
+   "2": "eGFR or CrCl <60 - 30 ml/min/1.73 m2",
+   "3": "eGFR or CrCl <30 - 15 ml/min/1.73 m2",
+   "4": "eGFR or CrCl <15 ml/min/1.73 m2; dialysis or renal transplant indicated",
+   "5": "Death"
+  },
+  "definition": "A disorder characterized by loss of kidney function greater than three months duration.",
+  "nav": "-"
+ }
+]

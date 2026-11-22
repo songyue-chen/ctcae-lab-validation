@@ -1,0 +1,48 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  tables-and-records:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Regenerate records and expectations
+        run: python3 generator/gen_records.py
+      - name: Validate tables, records and expectations
+        run: python3 generator/qc.py
+      - name: Regenerate documentation
+        run: python3 generator/build_docs.py
+      - name: Committed data and docs must equal the regenerated files
+        run: git diff --exit-code -- data docs
+      - name: Assemble the user package (branch main content)
+        run: python3 generator/release.py --out release-out
+      - name: Committed tree must equal the assembled full package
+        run: python3 generator/release.py --out release-full --full && diff -r --exclude=.git --exclude=__pycache__ --exclude=release-out --exclude=release-full . release-full
+      - uses: actions/upload-artifact@v4
+        with:
+          name: user-package
+          path: release-out
+
+  r-reference:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: "release"
+      - name: R loader and comparator self-check
+        run: Rscript reference/r/selfcheck.R "$GITHUB_WORKSPACE"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Transport file read-back check
+        run: |
+          Rscript -e 'install.packages("haven", repos = "https://cloud.r-project.org")'
+          python3 generator/release.py --out release-out
+          Rscript generator/check_xpt.R release-out/data

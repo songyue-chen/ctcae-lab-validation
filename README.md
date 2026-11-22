@@ -5,8 +5,8 @@ with the grade and term a correct implementation must produce under both version
 it, merge the output back on `RECORD_ID`, compare with the expected columns. Where the two differ, the record says
 which CTCAE criterion and which reading of the wording is at stake.
 
-This branch (`main`) holds the dataset alone. Branch `full` of the same repository adds the SAS and R reference
-loaders and comparators, the generator that derives the expected values, and the contributor documents.
+This branch (`full`) is the complete package: the dataset, the SAS and R reference loaders and comparators, the
+generator that derives the expected values, and the contributor documents. Branch `main` holds the dataset alone.
 
 | File | Content |
 |---|---|
@@ -18,7 +18,11 @@ loaders and comparators, the generator that derives the expected values, and the
 | `data/expectations.csv` | the expected values in long form, including the alternative profiles for the records they change |
 | `data/analytes.csv`, `data/units.csv`, `data/schema/` | test master, unit conversion factors, column definitions of every table |
 | `docs/` | data dictionary of every table, the conventions explained, record and rule coverage, the design |
-| `LICENSE` | CC BY 4.0 |
+| `reference/sas/`, `reference/r/` | loaders, comparators, self-checks and mapping templates for SAS and R |
+| `reference/results_template.csv` | the minimum output to produce when comparing outside SAS or R |
+| `generator/` | regenerates `records.csv`, `expectations.csv` and the generated documents from the tables; `qc.py` is the quality gate |
+| `CONTRIBUTING.md`, `CHANGELOG.md`, `CITATION.cff` | how expectations change, release history, how to cite |
+| `LICENSE`, `LICENSE-CODE` | CC BY 4.0 for data and documentation, MIT for code |
 
 ## What is in a record
 
@@ -47,6 +51,47 @@ rules for reading the expected columns:
 3. `CONVENTION_DEP = Y` marks the records whose expectation depends on a reading of the CTCAE wording that has a
    documented alternative (dictionary, appendix B). If your rules follow the other reading, exclude these records
    and say so in your validation report.
+
+## Reference comparators
+
+The reference code does the merge-and-compare of the next section for you and reports by module, by record and by
+criteria rule. `reference/sas/selfcheck.sas` and `reference/r/selfcheck.R` prove loader and comparator in your session
+before any grading code is plugged in (look for SELFCHECK PASSED); the mapping templates show where to recode your
+test codes, categories, variable names and term names.
+
+### SAS (SAS 9.4 or later)
+
+```sas
+%include "/path/to/ctcae-lab-validation/reference/sas/load_records.sas";
+%include "/path/to/ctcae-lab-validation/reference/sas/compare_results.sas";
+%ctcval_load(dir=/path/to/ctcae-lab-validation, naming=ADAM);   /* WORK.CTCVAL_RECORDS with ADaM names */
+
+/* run your grading macro on CTCVAL_RECORDS for CTCAE v5 -> MY_RESULTS (keeps RECORD_ID), then */
+%ctcval_compare(results=my_results, version=5, profile=DEFAULT,
+                gradelow=ATOXGRL, gradehigh=ATOXGRH, termlow=ATOXDSCL, termhigh=ATOXDSCH);
+```
+
+### R (base R, no packages)
+
+```r
+source("reference/r/load_records.R"); source("reference/r/compare_results.R")
+d <- ctcval_load("path/to/ctcae-lab-validation", naming = "adam")
+# run your grading function on d$records for CTCAE v5 -> my_results (keeps RECORD_ID), then
+cmp <- ctcval_compare(my_results, version = 5, profile = "DEFAULT",
+                      cols = list(grade_low = "ATOXGRL", grade_high = "ATOXGRH", term_low = "ATOXDSCL", term_high = "ATOXDSCH"),
+                      data = d)
+```
+
+### Anything else
+
+Produce a CSV with the columns of `reference/results_template.csv` (`RECORD_ID` plus `GRADE_LOW`, `GRADE_HIGH`,
+`TERM_LOW`, `TERM_HIGH` for bidirectional designs, or `GRADE` and `TERM` for a single worst grade) and compare it with
+`data/expectations.csv` for the version and profile you validate against.
+
+Both comparators report the status by `MODULE`, a mismatch listing (expected vs obtained with `RULE_IDS`, conventions
+and the record description), the coverage and status by criteria `RULE_ID`, and a PASS/FAIL note. `convdep=N`
+(`convdep = FALSE` in R) drops the records whose expectation depends on a documented alternative reading;
+`profile=` compares against one of the alternative profiles instead.
 
 ## Test-driven development of a grading macro or function
 
@@ -134,3 +179,21 @@ an upper limit only. INR 0.8 - 1.1 and the 24-hour urine creatinine and potassiu
 Medical Encyclopedia (US National Library of Medicine); GFR and eGFR >= 90 mL/min/1.73 m2 is the KDIGO normal
 category G1. Every record carries its own range, so an adopter's ranges can replace them. Dataset release 1.0.0.
 Licence CC BY 4.0 (`LICENSE`).
+
+## Regenerating the data
+
+Python 3.11 or later, no packages:
+
+```bash
+python3 generator/gen_records.py && python3 generator/qc.py && python3 generator/build_docs.py
+```
+
+`gen_records.py` rewrites `data/records.csv` and `data/expectations.csv` from the four tables (deterministic, no
+CTCAE threshold is coded in it), `qc.py` validates every table and re-simulates every expected grade, `build_docs.py`
+rewrites the generated documents. CI runs the three scripts, `Rscript reference/r/selfcheck.R`, and checks that the
+committed files equal the regenerated ones and that the committed tree equals `generator/release.py --full`.
+
+## Licence and citation
+
+Data and documentation: CC BY 4.0 (`LICENSE`). Code: MIT (`LICENSE-CODE`). Cite as described in `CITATION.cff`.
+Disputes and corrections: open an issue with the "Dispute an expectation" template, quoting the CTCAE wording.

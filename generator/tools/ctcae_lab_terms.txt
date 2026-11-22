@@ -1,0 +1,54 @@
+Activated partial thromboplastin time prolonged
+Alanine aminotransferase increased
+Alkaline phosphatase increased
+Anemia
+Aspartate aminotransferase increased
+Blood bicarbonate decreased
+Blood bilirubin increased
+Blood lactate dehydrogenase increased
+CD4 lymphocytes decreased
+Cholesterol high
+Chronic kidney disease
+Creatinine clearance decreased
+Creatinine increased
+Eosinophilia
+Fibrinogen decreased
+GGT increased
+Haptoglobin decreased
+HDL decreased
+Hemoglobin increased
+Hyperglycemia
+Hyperkalemia
+Hypermagnesemia
+Hypernatremia
+Hyperphosphatemia
+Hypertriglyceridemia
+Hyperuricemia
+Hypoalbuminemia
+Hypocalcemia
+Hypercalcemia
+Hypoglycemia
+Hypokalemia
+Hypomagnesemia
+Hyponatremia
+Hypophosphatemia
+INR increased
+LDL increased
+Leukocytosis
+Lipase increased
+Lymphocyte count decreased
+Lymphocyte count increased
+Lymphopenia
+Methemoglobinemia
+Neutrophil count decreased
+Neutrophil count increased
+Platelet count decreased
+Proteinuria
+Serum amylase increased
+Thrombocytopenia
+Urinary protein increased
+Vitamin D decreased
+White blood cell decreased
+CPK increased
+Cardiac troponin I increased
+Cardiac troponin T increased
