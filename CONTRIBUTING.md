@@ -1,5 +1,10 @@
 # Contributing
 
+## Reviewing the dataset
+
+`docs/review-guide.md` lists the questions for clinical, laboratory and programming reviewers. Answer them in
+issues, one per question or finding.
+
 ## Disputing an expected value
 
 Open an issue with the "Dispute an expectation" template. It asks for the `RECORD_ID` or `SCENARIO_ID`, the
@@ -40,7 +45,8 @@ every threshold of its applicable rules automatically. Edge, unit and specimen s
 
 - Test codes, names, specimens and units are CDISC SDTM submission values; a code outside the codelists is flagged
   `CDISC_CT = N` in `data/analytes.csv` with a note.
-- Published documents carry no author names; contributions are attributed through the version history.
+- Contributions are attributed through the version history. Reviewers are named in the README Acknowledgements
+  (name, role, area reviewed) only with their written consent; no other document carries personal names.
 - Python 3.11 or later with the standard library only; base R for the R reference code; SAS 9.4 for the SAS
   reference code. The SAS programs cannot be executed by CI: `reference/sas/selfcheck.sas` is the self-check to run
   in a SAS session after a change to the SAS files.

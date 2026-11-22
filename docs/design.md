@@ -41,7 +41,7 @@ ctcae-lab-validation/
     units.csv                    conversion factors (LBTESTCD, FROM_UNIT, TO_UNIT, FACTOR)
     schema/*.schema.json         column types, allowed values of every table
   docs/
-    data_dictionary.md  conventions.md  coverage.md  (generated)   design.md (this file)
+    data_dictionary.md  conventions.md  coverage.md  (generated)   design.md (this file)   review-guide.md
   reference/
     sas/  load_records.sas  compare_results.sas  selfcheck.sas  mapping_template.sas
     r/    load_records.R    compare_results.R    selfcheck.R    mapping_template.R

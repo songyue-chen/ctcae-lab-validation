@@ -1,5 +1,9 @@
 # ctcae-lab-validation
 
+> **Clinical reviewers:** you don't need to run any code. Start with [docs/review-guide.md](docs/review-guide.md):
+> a short list of plain questions on how this dataset reads CTCAE where the wording leaves room. Reply in a GitHub
+> issue. Reviewers who agree to be named are listed under Acknowledgements.
+
 A test dataset for CTCAE laboratory grading code, versions 5.0 and 6.0. One dataset, 1,057 laboratory records, each
 with the grade and term a correct implementation must produce under both versions. Run your macro or function on
 it, merge the output back on `RECORD_ID`, compare with the expected columns. Where the two differ, the record says
@@ -192,6 +196,11 @@ python3 generator/gen_records.py && python3 generator/qc.py && python3 generator
 CTCAE threshold is coded in it), `qc.py` validates every table and re-simulates every expected grade, `build_docs.py`
 rewrites the generated documents. CI runs the three scripts, `Rscript reference/r/selfcheck.R`, and checks that the
 committed files equal the regenerated ones and that the committed tree equals `generator/release.py --full`.
+
+## Acknowledgements
+
+Reviewers who agree to be named are listed here with the area they reviewed. Nobody is named without consent.
+Review of release 1.0.0 is open: see [docs/review-guide.md](docs/review-guide.md).
 
 ## Licence and citation
 

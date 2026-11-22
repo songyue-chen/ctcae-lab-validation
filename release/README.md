@@ -1,5 +1,9 @@
 # ctcae-lab-validation
 
+> **Clinical reviewers:** you don't need to run any code. Start with [docs/review-guide.md](docs/review-guide.md):
+> a short list of plain questions on how this dataset reads CTCAE where the wording leaves room. Reply in a GitHub
+> issue. Reviewers who agree to be named are listed under Acknowledgements.
+
 A test dataset for CTCAE laboratory grading code, versions 5.0 and 6.0. One dataset, 1,057 laboratory records, each
 with the grade and term a correct implementation must produce under both versions. Run your macro or function on
 it, merge the output back on `RECORD_ID`, compare with the expected columns. Where the two differ, the record says
@@ -121,6 +125,11 @@ readings are defensible, `data/expectations.csv` publishes the alternative profi
 An independent re-simulation checks every expected grade on every regeneration; `docs/coverage.md` lists which
 records exercise which rules. Disputes: open an issue quoting the CTCAE wording and naming the `RULE_IDS` of the
 record.
+
+## Acknowledgements
+
+Reviewers who agree to be named are listed here with the area they reviewed. Nobody is named without consent.
+Review of release 1.0.0 is open: see [docs/review-guide.md](docs/review-guide.md).
 
 ## Sources, versions, licence
 

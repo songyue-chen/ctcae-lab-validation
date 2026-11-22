@@ -6,6 +6,9 @@ or the column layout. Added records are a minor release.
 
 ## Unreleased
 
+- Documentation: `docs/review-guide.md` with the questions for clinical, laboratory and programming
+  reviewers; README note for clinical reviewers and an Acknowledgements section. Reviewers are named only with their
+  consent (CONTRIBUTING.md).
 - Repository: branch `main` holds the dataset package, branch `full` the complete package with the reference code,
   the generator and the contributor documents; both are assembled by `generator/release.py` (`--full`).
 - Reference code: the comparators no longer keep STATUS, which the SDTM naming renames (a comparison after an SDTM
