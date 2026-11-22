@@ -38,7 +38,7 @@ depends on", and why.
    normal range in the direction being graded (above ULN for ALT, below LLN for fibrinogen). Does that match your
    understanding of "if baseline was abnormal"?
 
-7. **v5 creatinine and baseline** (CREAT_BASELINE_ARM). v5 lists "1.5 - 3.0 x baseline" next to "1.5 - 3.0 x ULN"
+7. **v5 creatinine and baseline** (CREAT_BASELINE_ARM). v5 lists ">1.5 - 3.0 x baseline" next to ">1.5 - 3.0 x ULN"
    without saying when the baseline clause applies. The dataset applies it whatever the baseline, so creatinine that
    doubles from a low baseline can be grade 2 while still inside the normal range. v6 limits the baseline clause to
    a baseline below LLN. Should v5 be read the same way?
@@ -61,17 +61,18 @@ depends on", and why.
 
 ## For laboratory medicine and clinical chemistry
 
-12. **Normal ranges** (`data/analytes.csv`, columns LLN_SI and ULN_SI). The default ranges are the adult ranges of
-    the ABIM Laboratory Test Reference Ranges (January 2026), converted to SI: the female range where ABIM gives two,
-    0 as the lower limit where only an upper limit is given. INR is from MedlinePlus, GFR from the KDIGO G1 category.
-    Do any look wrong for an adult reference population?
+12. **Normal ranges** ([data/analytes.csv](../data/analytes.csv), columns LLN_SI and ULN_SI). The default ranges are
+    the adult ranges of the ABIM Laboratory Test Reference Ranges (January 2026), converted to SI: the female range
+    where ABIM gives two, 0 as the lower limit where only an upper limit is given. INR is from MedlinePlus, GFR from
+    the KDIGO G1 category. Do any look wrong for an adult reference population?
 
-13. **Unit conversions** (`data/units.csv`). Each row is a factor from a reported unit to the SI unit used for
-    grading. Are the factors right, and are common reported units missing?
+13. **Unit conversions** ([data/units.csv](../data/units.csv)). Each row is a factor from a reported unit to the SI
+    unit used for grading. Are the factors right, and are common reported units missing?
 
-14. **Units the dataset refuses to grade** (UNIT_GUARD). An unknown or blank unit makes a result not gradable when
-    the criterion is an absolute value (for example potassium in mmol/L), but is accepted when the criterion is a
-    multiple of ULN (for example ALT). Is that the right line to draw?
+14. **Units the dataset refuses to grade** (UNIT_GUARD). A blank unit makes any result not gradable, except for
+    INR, which has no unit. A unit the dataset cannot convert is not gradable when the criterion is an absolute value
+    (for example hemoglobin reported in mg/L), but is accepted when the criterion is a multiple of ULN, LLN or
+    baseline (for example ALT in ukat/L), because the unit cancels. Is that the right line to draw?
 
 ## For statistical programmers
 
